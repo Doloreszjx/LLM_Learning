@@ -81,5 +81,6 @@ for epoch in range(200):
 
 # 查看某些词的 embedding
 for word in ["cat", "dog", "milk"]:
+    # .detach()：脱离计算图，避免影响模型训练；
     emb = model.embeddings.weight[word2idx[word]].detach().numpy()
     print(f"{word}: {emb}")
